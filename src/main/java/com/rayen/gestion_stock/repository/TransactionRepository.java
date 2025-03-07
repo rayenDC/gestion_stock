@@ -16,7 +16,7 @@ public interface TransactionRepository extends JpaRepository<Transaction, Long> 
     List<Transaction> findAllByMonthAndYear(@Param("month") int month, @Param("year") int year);
 
 
-    //we are searching these field; Transaction's description, note, status, Product's name, sku
+
     @Query("SELECT t FROM TransactionDTO t " +
             "LEFT JOIN t.product p " +
             "WHERE (:searchText IS NULL OR " +
