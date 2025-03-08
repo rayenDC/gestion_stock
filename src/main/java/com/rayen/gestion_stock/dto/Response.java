@@ -12,24 +12,22 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Builder
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Response {
     //generic
-    private  int status ;
+    private int status;
     private String message;
     //for login
     private String token;
-    private UserRole role ;
+    private UserRole role;
     private String expirationTime;
 
     //for pagination
     private Integer totalPages;
-    private Long totalElement;
+    private Long totalElements;
 
-    //data output optinal
+    //data output optional
     private UserDTO user;
     private List<UserDTO> users;
 
@@ -46,6 +44,12 @@ public class Response {
     private List<TransactionDTO> transactions;
 
     private final LocalDateTime timestamp = LocalDateTime.now();
+
+
+
+
+
+
 
 
 }

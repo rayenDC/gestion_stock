@@ -50,12 +50,15 @@
 			<scope>runtime</scope>
 		</dependency>
 
-		<!-- Lombok for reducing boilerplate code -->
+
+
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
+			<version>1.18.24</version> <!-- Add a specific version -->
 			<scope>provided</scope>
 		</dependency>
+
 
 		<!-- Model Mapper for DTO conversion -->
 		<dependency>

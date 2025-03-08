@@ -12,30 +12,31 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 import java.util.List;
 
+
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Table(name = "users")
-public class User{
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id ;
+    private Long id;
 
-    @NotBlank(message="Name is required")
+    @NotBlank(message = "Name is required")
     private String name;
 
-    @NotBlank(message="Email is required")
+    @NotBlank(message = "Email is required")
     @Column(unique = true)
     private String email;
 
-    @NotBlank(message="Password is required")
+    @NotBlank(message = "Password  is required")
     private String password;
 
-    @NotBlank(message="Phone number is required")
-    @Column(name="phone_number")
+    @NotBlank(message = "Phone Number is required")
+    @Column(name = "phone_number")
     private String phoneNumber;
 
     @Enumerated(EnumType.STRING)
@@ -44,8 +45,8 @@ public class User{
     @OneToMany(mappedBy = "user")
     private List<Transaction> transactions;
 
-    @Column(name="created_at")
-    private final LocalDateTime createdAt= LocalDateTime.now();
+    @Column(name = "created_at")
+    private final LocalDateTime createdAt = LocalDateTime.now();
 
     @Override
     public String toString() {
