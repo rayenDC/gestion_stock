@@ -1,13 +1,13 @@
 package com.rayen.gestion_stock.service.impl;
 
-import com.phegondev.InventoryManagementSystem.dto.ProductDTO;
-import com.phegondev.InventoryManagementSystem.dto.Response;
-import com.phegondev.InventoryManagementSystem.entity.Category;
-import com.phegondev.InventoryManagementSystem.entity.Product;
-import com.phegondev.InventoryManagementSystem.exceptions.NotFoundException;
-import com.phegondev.InventoryManagementSystem.repository.CategoryRepository;
-import com.phegondev.InventoryManagementSystem.repository.ProductRepository;
-import com.phegondev.InventoryManagementSystem.service.ProductService;
+
+import com.rayen.gestion_stock.dto.ProductDTO;
+import com.rayen.gestion_stock.dto.Response;
+import com.rayen.gestion_stock.entity.Category;
+import com.rayen.gestion_stock.entity.Product;
+import com.rayen.gestion_stock.exceptions.NotFoundException;
+import com.rayen.gestion_stock.repository.CategoryRepository;
+import com.rayen.gestion_stock.repository.ProductRepository;
 import com.rayen.gestion_stock.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
