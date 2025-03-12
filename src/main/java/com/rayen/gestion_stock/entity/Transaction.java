@@ -1,9 +1,9 @@
 package com.rayen.gestion_stock.entity;
 
+
 import com.rayen.gestion_stock.enums.TransactionStatus;
 import com.rayen.gestion_stock.enums.TransactionType;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -22,7 +22,7 @@ public class Transaction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id ;
+    private Long id;
 
     private Integer totalProducts;
 
@@ -36,20 +36,20 @@ public class Transaction {
 
     private String description;
 
-    private LocalDateTime UpdatedAt;
+    private LocalDateTime updatedAt;
 
-    private final LocalDateTime createdAT =LocalDateTime.now();
+    private final LocalDateTime createdAt = LocalDateTime.now();
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="user_id")
+    @JoinColumn(name = "user_id")
     private User user;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="product_id")
+    @JoinColumn(name = "product_id")
     private Product product;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="supplier_id")
+    @JoinColumn(name = "supplier_id")
     private Supplier supplier;
 
     @Override
@@ -61,8 +61,8 @@ public class Transaction {
                 ", transactionType=" + transactionType +
                 ", status=" + status +
                 ", description='" + description + '\'' +
-                ", UpdatedAt=" + UpdatedAt +
-                ", createdAT=" + createdAT +
+                ", updatedAt=" + updatedAt +
+                ", createdAt=" + createdAt +
                 '}';
     }
 }

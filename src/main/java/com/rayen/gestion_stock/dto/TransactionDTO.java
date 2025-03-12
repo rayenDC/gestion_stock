@@ -4,9 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.rayen.gestion_stock.enums.TransactionStatus;
 import com.rayen.gestion_stock.enums.TransactionType;
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -20,9 +18,7 @@ import java.time.LocalDateTime;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TransactionDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id ;
+    private Long id;
 
     private Integer totalProducts;
 
@@ -35,15 +31,14 @@ public class TransactionDTO {
 
     private String description;
 
-    private LocalDateTime UpdatedAt;
+    private LocalDateTime updatedAt;
 
-    private  LocalDateTime createdAT ;
+    private LocalDateTime createdAt;
 
     private UserDTO user;
 
     private ProductDTO product;
 
     private SupplierDTO supplier;
-
 
 }

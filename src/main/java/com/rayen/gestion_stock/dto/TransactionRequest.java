@@ -1,5 +1,6 @@
 package com.rayen.gestion_stock.dto;
 
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
@@ -12,13 +13,13 @@ import lombok.NoArgsConstructor;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TransactionRequest {
 
-    @Positive(message= "Product id is required")
+    @Positive(message = "Product id is required")
     private Long productId;
 
-    @Positive(message= "quantity id is required")
+    @Positive(message = "Quantity id is required")
     private Integer quantity;
 
     private Long supplierId;
 
-    private String description;
+    private String  description;
 }

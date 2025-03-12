@@ -1,7 +1,6 @@
 package com.rayen.gestion_stock.exceptions;
 
 
-
 import com.rayen.gestion_stock.dto.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

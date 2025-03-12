@@ -19,14 +19,15 @@ public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id ;
+    private Long id;
 
-    @NotBlank(message="Name is required")
+    @NotBlank(message = "Name is required")
     @Column(unique = true)
     private String name;
 
     @OneToMany(mappedBy = "category")
     private List<Product> products;
+
 
     @Override
     public String toString() {

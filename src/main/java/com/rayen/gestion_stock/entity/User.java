@@ -1,6 +1,5 @@
 package com.rayen.gestion_stock.entity;
 
-
 import com.rayen.gestion_stock.enums.UserRole;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -11,7 +10,6 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.List;
-
 
 @Entity
 @Data

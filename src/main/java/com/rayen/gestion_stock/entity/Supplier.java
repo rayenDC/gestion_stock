@@ -1,5 +1,6 @@
 package com.rayen.gestion_stock.entity;
 
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
@@ -17,11 +18,10 @@ public class Supplier {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id ;
+    private Long id;
 
-    @NotBlank(message="Name is required")
+    @NotBlank(message = "Name is required")
     private String name;
 
-    private String address ;
-
+    private String address;
 }
