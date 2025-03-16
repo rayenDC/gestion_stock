@@ -25,7 +25,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @RequiredArgsConstructor
 @Slf4j
 public class SecurityFilter {
-    private final AuthFilter authFilter;
+//    private final AuthFilter authFilter;
     private final CustomAuthenticationEntryPoint customAuthenticationEntryPoint;
     private final CustomAccessDeniedHandler customAccessDeniedHandler;
 
@@ -40,8 +40,8 @@ public class SecurityFilter {
                         .requestMatchers("/api/auth/**").permitAll()
                         .anyRequest().authenticated()
                 )
-                .sessionManagement(manager -> manager.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class);
+                .sessionManagement(manager -> manager.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+//                .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class);
         return httpSecurity.build();
     }
 

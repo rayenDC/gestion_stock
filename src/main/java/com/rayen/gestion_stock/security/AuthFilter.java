@@ -1,3 +1,4 @@
+
 package com.rayen.gestion_stock.security;
 
 import jakarta.servlet.FilterChain;
@@ -20,7 +21,7 @@ import java.io.IOException;
 @Slf4j
 @RequiredArgsConstructor
 public class AuthFilter extends OncePerRequestFilter {
-    private final JwtUtils jwtUtils;
+   private final JwtUtils jwtUtils;
     private final CustomUserDetailsService customUserDetailsService;
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
