@@ -33,8 +33,8 @@ public class ProductServiceImpl implements ProductService {
 
     private static final String IMAGE_DIRECTORY = System.getProperty("user.dir") + "/product-image/";
 
-    //AFTER YOUR FROTEND IS SET UP WROTE THIS SO THE IMAGE IS SAVED IN YOUR FRONTEND PUBLIC FOLDER
-    private static final String IMAGE_DIRECTOR_FRONTEND = "/Users/dennismac/phegonDev/ims-angular/public/products/";
+    // IMAGE IS SAVED IN my FRONTEND PUBLIC FOLDER
+    private static final String IMAGE_DIRECTOR_FRONTEND = "/Users/Dell/projectPFE/frontEndProjectPFE/ims-angular/public/products/";
 
 
     @Override

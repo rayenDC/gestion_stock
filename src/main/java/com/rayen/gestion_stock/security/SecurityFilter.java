@@ -1,7 +1,9 @@
 package com.rayen.gestion_stock.security;
 
+
 import com.rayen.gestion_stock.exceptions.CustomAccessDeniedHandler;
 import com.rayen.gestion_stock.exceptions.CustomAuthenticationEntryPoint;
+import com.rayen.gestion_stock.security.AuthFilter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
@@ -25,7 +27,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @RequiredArgsConstructor
 @Slf4j
 public class SecurityFilter {
-//    private final AuthFilter authFilter;
+    private final AuthFilter authFilter;
     private final CustomAuthenticationEntryPoint customAuthenticationEntryPoint;
     private final CustomAccessDeniedHandler customAccessDeniedHandler;
 
@@ -40,8 +42,8 @@ public class SecurityFilter {
                         .requestMatchers("/api/auth/**").permitAll()
                         .anyRequest().authenticated()
                 )
-                .sessionManagement(manager -> manager.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
-//                .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class);
+                .sessionManagement(manager -> manager.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class);
         return httpSecurity.build();
     }
 
