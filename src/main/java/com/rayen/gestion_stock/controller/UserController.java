@@ -1,6 +1,7 @@
 package com.rayen.gestion_stock.controller;
 
 
+import com.rayen.gestion_stock.dto.RegisterRequest;
 import com.rayen.gestion_stock.dto.Response;
 import com.rayen.gestion_stock.dto.UserDTO;
 import com.rayen.gestion_stock.entity.User;
@@ -23,10 +24,23 @@ public class UserController {
         return ResponseEntity.ok(userService.getAllUsers());
     }
 
+    @PostMapping("/create")
+    @PreAuthorize("hasAuthority('ADMIN')")
+    public ResponseEntity<Response> createUser(@RequestBody RegisterRequest registerRequest) {
+        return ResponseEntity.ok(userService.registerUser(registerRequest));
+    }
     @PutMapping("/update/{id}")
-    public ResponseEntity<Response> updateUser(@PathVariable Long id,  @RequestBody UserDTO userDTO){
+    @PreAuthorize("hasAuthority('ADMIN')")
+    public ResponseEntity<Response> updateUser(@PathVariable Long id, @RequestBody UserDTO userDTO){
         return ResponseEntity.ok(userService.updateUser(id, userDTO));
     }
+
+
+
+    /*@PutMapping("/update/{id}")
+    public ResponseEntity<Response> updateUser(@PathVariable Long id,  @RequestBody UserDTO userDTO){
+        return ResponseEntity.ok(userService.updateUser(id, userDTO));
+    }*/
 
     @DeleteMapping("/delete/{id}")
     @PreAuthorize("hasAuthority('ADMIN')")
