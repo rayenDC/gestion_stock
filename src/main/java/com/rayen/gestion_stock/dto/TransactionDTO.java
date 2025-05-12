@@ -41,4 +41,6 @@ public class TransactionDTO {
 
     private SupplierDTO supplier;
 
+    private ClientDTO client;
+
 }

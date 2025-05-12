@@ -20,6 +20,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.http.HttpMethod;
 
 @Configuration
 @EnableWebSecurity
@@ -40,6 +41,8 @@ public class SecurityFilter {
                 )
                 .authorizeHttpRequests(request -> request
                         .requestMatchers("/api/auth/**").permitAll()
+
+                        .requestMatchers(HttpMethod.GET, "/api/transactions/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(manager -> manager.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

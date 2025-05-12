@@ -36,6 +36,7 @@ public class Transaction {
 
     private String description;
 
+
     private LocalDateTime updatedAt;
 
     private final LocalDateTime createdAt = LocalDateTime.now();
@@ -51,6 +52,10 @@ public class Transaction {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "supplier_id")
     private Supplier supplier;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "client_id")
+    private Client client;
 
     @Override
     public String toString() {
